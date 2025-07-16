@@ -3,7 +3,7 @@ const cursos = Array.from({ length: 35 }, (_, i) => ({
   nombre: `Curso de Cocina #${i + 1}`,
   duracion: `${4 + (i % 3)} semanas`,
   precio: (49.99 + i * 2).toFixed(2),
-  imagen: `https://source.unsplash.com/600x400/?food,course,${i + 1}`
+  imagen: `https://source.unsplash.com/600x400/?cooking&sig=${i + 1}`
 }));
 
 const cursosGrid = document.getElementById("cursos-grid");
@@ -11,14 +11,14 @@ const textoBoton = "Comprar ahora";
 
 cursos.forEach((curso, index) => {
   const div = document.createElement("div");
-  div.className = "card";
+  div.className = "bg-white border rounded-xl shadow hover:shadow-lg transition overflow-hidden";
   div.innerHTML = `
     <img src="${curso.imagen}" alt="${curso.nombre}" class="w-full h-48 object-cover">
     <div class="p-4">
       <h3 class="text-lg font-bold text-orange-600 mb-1">${curso.nombre}</h3>
       <p class="text-sm mb-1 text-gray-700">Duración: ${curso.duracion}</p>
       <p class="text-sm mb-3 text-gray-700">Precio: €${curso.precio}</p>
-      <button onclick="iniciarPago(${index})" class="btn-primary">${textoBoton}</button>
+      <button onclick="iniciarPago(${index})" class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">${textoBoton}</button>
     </div>
   `;
   cursosGrid.appendChild(div);

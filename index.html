@@ -8,78 +8,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
   <script defer src="main.js"></script>
-  <style>
-    body { font-family: 'Montserrat', sans-serif; }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
-    .btn-primary {
-      @apply bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition;
-    }
-    .card {
-      @apply bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden;
-    }
-  </style>
 </head>
-<body class="bg-orange-50 text-gray-900">
-  <header class="bg-white shadow py-6 fixed top-0 w-full z-50">
-    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-orange-600">Campus Macha</h1>
-      <nav class="hidden md:flex gap-6">
-        <a href="#cursos" class="hover:text-orange-500">Cursos</a>
-        <a href="#beneficios" class="hover:text-orange-500">Beneficios</a>
-        <a href="#testimonios" class="hover:text-orange-500">Testimonios</a>
-        <a href="#contacto" class="hover:text-orange-500">Contacto</a>
-      </nav>
+<body class="bg-orange-50 text-gray-900 font-sans">
+  <header class="relative w-full h-[90vh] overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1604908176963-f89b0d2e47a5?auto=format&fit=crop&w=1920&q=80"
+         alt="Chefs trabajando" class="absolute inset-0 w-full h-full object-cover opacity-60">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60 flex flex-col justify-center items-center text-white text-center px-4">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Aprendé a cocinar como un chef profesional</h1>
+      <p class="text-xl mb-6">Cursos online dictados por expertos desde cualquier parte del mundo</p>
+      <a href="#cursos" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium text-lg transition">Ver Cursos</a>
     </div>
   </header>
-
-  <section class="pt-32 pb-20 bg-gradient-to-br from-orange-400 to-yellow-300 text-white text-center">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-bold mb-6">Aprendé a cocinar como un chef profesional</h2>
-      <p class="text-lg mb-8">Cursos 100% online dictados por chefs reales. Inscribite desde cualquier parte del mundo.</p>
-      <a href="#cursos" class="btn-primary text-lg">Ver Cursos</a>
-    </div>
-  </section>
 
   <main class="max-w-7xl mx-auto px-4 py-16">
     <section id="cursos">
       <h2 class="text-3xl font-bold text-center mb-10 text-orange-600">Nuestros Cursos</h2>
       <div id="cursos-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-    </section>
-
-    <section id="beneficios" class="my-20">
-      <h2 class="text-3xl font-bold text-center mb-8 text-orange-600">¿Por qué elegirnos?</h2>
-      <div class="grid md:grid-cols-3 gap-6 text-center">
-        <div class="p-6 bg-white rounded-xl shadow">
-          <h3 class="text-xl font-semibold mb-2">Chefs Profesionales</h3>
-          <p>Todos nuestros cursos están dictados por expertos con experiencia real en cocina internacional.</p>
-        </div>
-        <div class="p-6 bg-white rounded-xl shadow">
-          <h3 class="text-xl font-semibold mb-2">Acceso 24/7</h3>
-          <p>Estudiá a tu ritmo, sin horarios fijos ni restricciones. Vos manejás tu formación.</p>
-        </div>
-        <div class="p-6 bg-white rounded-xl shadow">
-          <h3 class="text-xl font-semibold mb-2">Certificación</h3>
-          <p>Al completar cada curso, recibís un certificado digital que podés sumar a tu CV.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonios" class="bg-white py-16 rounded-xl shadow-md">
-      <h2 class="text-3xl font-bold text-center mb-10 text-orange-600">Lo que dicen nuestros estudiantes</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-orange-50 p-6 rounded shadow">
-          <p class="italic">“Este sitio me cambió la vida. Aprendí a hacer pastas como en Italia.”</p>
-          <p class="mt-4 font-bold">— Laura G.</p>
-        </div>
-        <div class="bg-orange-50 p-6 rounded shadow">
-          <p class="italic">“La experiencia es excelente. Las recetas y el soporte son increíbles.”</p>
-          <p class="mt-4 font-bold">— Marcos T.</p>
-        </div>
-        <div class="bg-orange-50 p-6 rounded shadow">
-          <p class="italic">“Muy completo y fácil de seguir. El mejor curso de cocina que hice.”</p>
-          <p class="mt-4 font-bold">— Paula R.</p>
-        </div>
-      </div>
     </section>
 
     <section id="paypal-container" class="fixed bottom-4 right-4 bg-white p-6 rounded-xl shadow-xl hidden z-50">
