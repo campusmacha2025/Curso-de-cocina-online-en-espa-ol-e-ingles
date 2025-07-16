@@ -3,31 +3,95 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Campus Macha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Macha - Cursos de Cocina Online</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
   <script defer src="main.js"></script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+    .btn-primary {
+      @apply bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition;
+    }
+    .card {
+      @apply bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden;
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-b from-orange-100 via-white to-green-50 min-h-screen font-sans text-gray-900">
-  <header class="bg-orange-500 text-white py-6 shadow-md text-center">
-    <h1 class="text-4xl font-extrabold">Campus Macha</h1>
-    <p class="text-lg mt-1 italic">Aprendé a cocinar como un chef profesional</p>
+<body class="bg-orange-50 text-gray-900">
+  <header class="bg-white shadow py-6 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-orange-600">Campus Macha</h1>
+      <nav class="hidden md:flex gap-6">
+        <a href="#cursos" class="hover:text-orange-500">Cursos</a>
+        <a href="#beneficios" class="hover:text-orange-500">Beneficios</a>
+        <a href="#testimonios" class="hover:text-orange-500">Testimonios</a>
+        <a href="#contacto" class="hover:text-orange-500">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="p-6 max-w-7xl mx-auto">
-    <section class="mb-12">
-      <h2 class="text-2xl font-bold mb-4 text-center text-orange-600">Nuestros Cursos</h2>
-      <div id="cursos-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+  <section class="pt-32 pb-20 bg-gradient-to-br from-orange-400 to-yellow-300 text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-4xl md:text-5xl font-bold mb-6">Aprendé a cocinar como un chef profesional</h2>
+      <p class="text-lg mb-8">Cursos 100% online dictados por chefs reales. Inscribite desde cualquier parte del mundo.</p>
+      <a href="#cursos" class="btn-primary text-lg">Ver Cursos</a>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 py-16">
+    <section id="cursos">
+      <h2 class="text-3xl font-bold text-center mb-10 text-orange-600">Nuestros Cursos</h2>
+      <div id="cursos-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </section>
-    <div id="paypal-container" class="fixed bottom-4 right-4 bg-white p-4 rounded-xl shadow-lg hidden z-50">
+
+    <section id="beneficios" class="my-20">
+      <h2 class="text-3xl font-bold text-center mb-8 text-orange-600">¿Por qué elegirnos?</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="p-6 bg-white rounded-xl shadow">
+          <h3 class="text-xl font-semibold mb-2">Chefs Profesionales</h3>
+          <p>Todos nuestros cursos están dictados por expertos con experiencia real en cocina internacional.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow">
+          <h3 class="text-xl font-semibold mb-2">Acceso 24/7</h3>
+          <p>Estudiá a tu ritmo, sin horarios fijos ni restricciones. Vos manejás tu formación.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow">
+          <h3 class="text-xl font-semibold mb-2">Certificación</h3>
+          <p>Al completar cada curso, recibís un certificado digital que podés sumar a tu CV.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios" class="bg-white py-16 rounded-xl shadow-md">
+      <h2 class="text-3xl font-bold text-center mb-10 text-orange-600">Lo que dicen nuestros estudiantes</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-orange-50 p-6 rounded shadow">
+          <p class="italic">“Este sitio me cambió la vida. Aprendí a hacer pastas como en Italia.”</p>
+          <p class="mt-4 font-bold">— Laura G.</p>
+        </div>
+        <div class="bg-orange-50 p-6 rounded shadow">
+          <p class="italic">“La experiencia es excelente. Las recetas y el soporte son increíbles.”</p>
+          <p class="mt-4 font-bold">— Marcos T.</p>
+        </div>
+        <div class="bg-orange-50 p-6 rounded shadow">
+          <p class="italic">“Muy completo y fácil de seguir. El mejor curso de cocina que hice.”</p>
+          <p class="mt-4 font-bold">— Paula R.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="paypal-container" class="fixed bottom-4 right-4 bg-white p-6 rounded-xl shadow-xl hidden z-50">
       <div class="text-center mb-2 font-semibold text-gray-800" id="paypal-course-name"></div>
       <div id="paypal-button-container"></div>
       <button onclick="cerrarPaypal()" class="mt-3 text-sm text-red-600 underline">Cancelar</button>
-    </div>
+    </section>
   </main>
 
-  <footer class="bg-gray-800 text-white text-center py-4 mt-12">
-    <p>&copy; 2025 Campus Macha | Contacto: <a href="mailto:campusmacha@gmail.com" class="underline">campusmacha@gmail.com</a></p>
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>© 2025 Campus Macha - Todos los derechos reservados</p>
+    <p>Contacto: <a href="mailto:campusmacha@gmail.com" class="underline">campusmacha@gmail.com</a></p>
   </footer>
 </body>
 </html>
