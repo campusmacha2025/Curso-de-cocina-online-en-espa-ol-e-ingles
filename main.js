@@ -218,7 +218,7 @@ cursos.forEach((curso, index) => {
   const div = document.createElement("div");
   div.className = "bg-white border rounded-xl shadow hover:shadow-lg transition overflow-hidden";
   div.innerHTML = `
-    <img src="${curso.imagen}" alt="${curso.nombre}" class="w-full h-48 object-cover">
+    <img src="${curso.imagen}" alt="${curso.nombre}" referrerpolicy="no-referrer" class="w-full h-48 object-cover">
     <div class="p-4">
       <h3 class="text-lg font-bold text-orange-600 mb-1">${curso.nombre}</h3>
       <p class="text-sm mb-1 text-gray-700">Duración: ${curso.duracion}</p>
